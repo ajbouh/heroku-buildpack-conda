@@ -49,6 +49,9 @@ export PATH=$PATH:$conda_temp/bin
 echo "---> Updating environment"
 conda update --yes --quiet --all
 
+# HACK(adamb) So we can properly install things that try to use matplotlib.
+export MPLBACKEND=agg
+
 echo "-----> Installing Dependencies..."
 conda env update -n root -f "$build/environment.yml"
 
