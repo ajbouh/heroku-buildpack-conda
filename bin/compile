@@ -57,7 +57,7 @@ conda env update -n root -f "$build/environment.yml"
 
 # HACK(adamb) Remove packages we don't want...
 echo "-----> Removing unwanted packages..."
-conda uninstall --force qt pyqt
+conda uninstall --force qt pyqt gstreamer gst-plugins-base tk
 
 echo "-----> Cleaning Python Environment..."
 conda clean --yes --tarballs
